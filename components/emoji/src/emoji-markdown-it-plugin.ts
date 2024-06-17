@@ -1,3 +1,3 @@
-import plugin from 'markdown-it-emoji/bare';
+import * as emojiMarkdownItPlugin from 'markdown-it-emoji/bare';
 
-export const emojiMarkdownItPlugin = plugin;
+export default emojiMarkdownItPlugin;

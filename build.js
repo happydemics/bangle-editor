@@ -14,24 +14,20 @@ const buildOptions = {
 
 async function readPackages() {
   const yarnWorkspacesListOutput = require('child_process')
-    .execSync(`yarn workspaces list --json`)
-    .toString()
-    .split('\n')
-    .filter(Boolean);
+    .execSync(`yarn workspaces info`)
+    .toString();
   let result = await Promise.all(
-    yarnWorkspacesListOutput
-      .map((r) => JSON.parse(r))
-      .map(async (r) => {
-        const _path = path.join(
-          path.resolve(__dirname, r.location),
-          'package.json',
-        );
+    Object.values(JSON.parse(yarnWorkspacesListOutput)).map(async (r) => {
+      const _path = path.join(
+        path.resolve(__dirname, r.location),
+        'package.json',
+      );
 
-        const file = fs.readFileSync(_path, 'utf-8');
-        const packageJSON = JSON.parse(file);
+      const file = fs.readFileSync(_path, 'utf-8');
+      const packageJSON = JSON.parse(file);
 
-        return { ...r, packageJSON };
-      }),
+      return { ...r, packageJSON };
+    }),
   );
 
   return result;
@@ -71,7 +67,7 @@ async function build() {
   // );
   await require('buildtool-bangle').build(
     list.map((obj) => {
-      console.log('Working on ', obj.location);
+      console.log('Working on', obj.location);
       return mainFile(obj.location);
     }),
     buildOptions,

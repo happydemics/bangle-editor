@@ -5,6 +5,7 @@ node_modules
 .pnp.js
 coverage
 tooling/e2e-tests/build
+emoji-markdown-it-plugin.ts
 
 
 
