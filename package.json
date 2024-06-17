@@ -37,7 +37,8 @@
     "tsc-check": "yarn tsc -b",
     "tsc-clean": "yarn tsc -b --clean",
     "tsc-watch": "yarn tsc-clean && yarn tsc -b -w",
-    "g:tsc": "yarn tsc"
+    "g:tsc": "yarn tsc",
+    "prepare": "yarn install && yarn build"
   },
   "prettier": {
     "singleQuote": true,
