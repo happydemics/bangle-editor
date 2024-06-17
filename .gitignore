@@ -22,7 +22,5 @@ tooling/e2e-tests/build
 yarn-error.log
 
 
-dist
-
 *.tsbuildinfo
 .log/

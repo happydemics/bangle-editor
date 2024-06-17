@@ -11,6 +11,8 @@
   ],
   "private": true,
   "license": "MIT",
+  "main": "lib/core/dist/index.js",
+  "types": "lib/core/dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bangle-io/bangle.dev.git"
@@ -37,8 +39,7 @@
     "tsc-check": "yarn tsc -b",
     "tsc-clean": "yarn tsc -b --clean",
     "tsc-watch": "yarn tsc-clean && yarn tsc -b -w",
-    "g:tsc": "yarn tsc",
-    "prepare": "yarn build"
+    "g:tsc": "yarn tsc"
   },
   "prettier": {
     "singleQuote": true,
