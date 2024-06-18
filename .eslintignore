@@ -6,6 +6,8 @@ node_modules
 coverage
 tooling/e2e-tests/build
 emoji-markdown-it-plugin.ts
+node-view.ts
+utils.ts
 
 
 

@@ -11,6 +11,7 @@ import {
 import { bangleWarn } from '@bangle.dev/utils';
 
 import { createElement } from './create-element';
+import { deepCompare } from './utils';
 
 const LOG = false;
 
@@ -299,7 +300,7 @@ export function saveRenderHandlers(
 ) {
   if (
     renderHandlersCache.has(editorContainer) &&
-    renderHandlersCache.get(editorContainer) !== handlers
+    !deepCompare(renderHandlersCache.get(editorContainer), handlers)
   ) {
     throw new Error(
       'It looks like renderHandlers were already set by someone else.',
