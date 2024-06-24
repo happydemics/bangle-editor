@@ -42,7 +42,9 @@ function specFactory() {
                 wiki_link: {
                     block: name,
                     getAttrs: (tok) => {
+                        // @ts-ignore
                         if (typeof tok.payload === 'string') {
+                            // @ts-ignore
                             let [path, title] = tok.payload.split('|');
                             return { path, title };
                         }

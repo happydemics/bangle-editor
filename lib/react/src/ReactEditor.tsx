@@ -94,6 +94,7 @@ export const BangleEditor = React.forwardRef<
         <div ref={renderRef} id={id} className={className} style={style} />
         {nodeViews.map((nodeView) => {
           return reactDOM.createPortal(
+            // @ts-ignore
             <NodeViewWrapper
               debugKey={objectUid.get(nodeView)}
               nodeViewUpdateStore={nodeViewUpdateStore}

@@ -356,8 +356,9 @@ declare const commands$4: {
     queryIsLinkActive: typeof queryIsLinkActive;
     queryIsSelectionAroundLink: typeof queryIsSelectionAroundLink;
 };
-declare function specFactory$4({ openOnClick }?: {
+declare function specFactory$4({ openOnClick, openOnNewTab, }?: {
     openOnClick?: boolean | undefined;
+    openOnNewTab?: boolean | undefined;
 }): RawSpecs;
 declare function pluginsFactory$4(): RawPlugins;
 declare const URL_REGEX: RegExp;

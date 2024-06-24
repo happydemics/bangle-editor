@@ -1,6 +1,6 @@
 {
   "name": "@bangle.dev/base-components",
-  "version": "0.32.1",
+  "version": "0.32.2",
   "homepage": "https://bangle.dev",
   "authors": [
     {
@@ -24,7 +24,8 @@
   "scripts": {
     "unit-tests": "yarn jest",
     "compile-ts": "yarn g:tsc --build $INIT_CWD",
-    "watch-ts": "yarn g:tsc -p $INIT_CWD -w"
+    "watch-ts": "yarn g:tsc -p $INIT_CWD -w",
+    "publish": "npm publish --dry-run --otp $OTP"
   },
   "peerDependencies": {
     "@bangle.dev/core": "*",

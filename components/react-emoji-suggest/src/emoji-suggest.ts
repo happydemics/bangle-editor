@@ -173,6 +173,7 @@ function pluginsFactory({
         rowWidth,
         suggestTooltipKey,
       }),
+      // @ts-ignore
       suggestTooltip.plugins({
         key: suggestTooltipKey,
         markName,

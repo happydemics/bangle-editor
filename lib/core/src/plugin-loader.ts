@@ -74,6 +74,7 @@ export function pluginLoader<T = any>(
 
     flatPlugins = flatPlugins.concat(
       // TODO: deprecate the ability pass a callback to the plugins param of pluginGroup
+      // @ts-ignore
       flatten(defaultPluginGroups, pluginPayload)[0],
     );
 

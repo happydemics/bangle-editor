@@ -11,6 +11,7 @@ import {
 
 export function setupReactEditor({
   specRegistry,
+  // @ts-ignore
   plugins = () => defaultPlugins,
   renderNodeViews,
   id = 'pm-root',

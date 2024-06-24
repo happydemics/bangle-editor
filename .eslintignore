@@ -5,10 +5,19 @@ node_modules
 .pnp.js
 coverage
 tooling/e2e-tests/build
+
 emoji-markdown-it-plugin.ts
 node-view.ts
 utils.ts
-
+ReactEditor.tsx
+entry-helpers.tsx
+link.ts
+underline.ts
+emoji-suggest.ts
+floating-menu.ts
+wiki-link.ts
+plugin-loader.test.ts
+plugin-loader.ts
 
 
 build

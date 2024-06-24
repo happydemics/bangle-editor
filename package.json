@@ -1,6 +1,6 @@
 {
-  "name": "bangle.dev",
-  "version": "0.32.1",
+  "name": "@happydemics/bangle.dev",
+  "version": "0.32.2",
   "homepage": "https://bangle.dev",
   "authors": [
     {
@@ -21,9 +21,7 @@
     "url": "https://github.com/bangle-io/bangle.dev/issues"
   },
   "workspaces": [
-    "tooling/*",
-    "components/*",
-    "lib/*"
+    "components/base-components"
   ],
   "scripts": {
     "g:build": "yarn node build.js",
@@ -33,7 +31,7 @@
     "test": "yarn lint && yarn g:e2e && yarn unit-tests",
     "unit-tests": "yarn jest",
     "lint": "yarn node tooling/bangle-scripts/check-dependencies.cjs && yarn prettier --check . && EsLintCycle=yes yarn eslint .",
-    "release-packages": "yarn tsc-check && yarn g:build && yarn workspaces foreach -pt --all  -v --no-private npm publish --otp $OTP",
+    "release-packages": "yarn tsc-check && yarn g:build && yarn workspaces run publish",
     "release-packages-alpha": "yarn tsc-check && yarn g:build && yarn workspaces foreach -pt --all  -v --no-private npm publish --tag alpha --otp $OTP",
     "update-ts-references": "yarn node tooling/bangle-scripts/ts-references.js",
     "tsc-check": "yarn tsc -b",

@@ -46,7 +46,10 @@ const getTypeFromSchema = (schema: Schema) => {
   return markType;
 };
 
-function specFactory({ openOnClick = false } = {}): RawSpecs {
+function specFactory({
+  openOnClick = false,
+  openOnNewTab = true,
+} = {}): RawSpecs {
   return {
     type: 'mark',
     name,
@@ -67,10 +70,16 @@ function specFactory({ openOnClick = false } = {}): RawSpecs {
       ],
       toDOM: (node): DOMOutputSpec => [
         'a',
-        {
-          ...node.attrs,
-          rel: 'noopener noreferrer nofollow',
-        },
+        openOnNewTab
+          ? {
+              ...node.attrs,
+              rel: 'noopener noreferrer nofollow',
+              target: '_blank',
+            }
+          : {
+              ...node.attrs,
+              rel: 'noopener noreferrer nofollow',
+            },
         0,
       ],
     },

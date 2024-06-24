@@ -206,6 +206,7 @@ function pluginsFactory({ key = new pm.PluginKey('emojiSuggestMenu'), markName, 
                 rowWidth,
                 suggestTooltipKey,
             }),
+            // @ts-ignore
             tooltip.suggestTooltip.plugins({
                 key: suggestTooltipKey,
                 markName,

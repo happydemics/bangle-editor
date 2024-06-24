@@ -21,6 +21,5 @@ tooling/e2e-tests/build
 !.yarn/versions
 yarn-error.log
 
-
 *.tsbuildinfo
 .log/

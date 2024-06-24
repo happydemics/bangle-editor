@@ -75,6 +75,7 @@ function floatingMenu({
   undefined | Plugin | (() => Plugin) | InputRule
 > {
   return [
+    // @ts-ignore
     selectionTooltip.plugins({
       key,
       calculateType,

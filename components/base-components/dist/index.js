@@ -2407,7 +2407,7 @@ const getTypeFromSchema$2 = (schema) => {
     assertNotUndefined(markType, `markType ${name$4} not found`);
     return markType;
 };
-function specFactory$4({ openOnClick = false } = {}) {
+function specFactory$4({ openOnClick = false, openOnNewTab = true, } = {}) {
     return {
         type: 'mark',
         name: name$4,
@@ -2428,10 +2428,16 @@ function specFactory$4({ openOnClick = false } = {}) {
             ],
             toDOM: (node) => [
                 'a',
-                {
-                    ...node.attrs,
-                    rel: 'noopener noreferrer nofollow',
-                },
+                openOnNewTab
+                    ? {
+                        ...node.attrs,
+                        rel: 'noopener noreferrer nofollow',
+                        target: '_blank',
+                    }
+                    : {
+                        ...node.attrs,
+                        rel: 'noopener noreferrer nofollow',
+                    },
                 0,
             ],
         },
@@ -3245,6 +3251,7 @@ function specFactory() {
     };
 }
 function pluginsFactory({ keybindings = defaultKeys } = {}) {
+    // @ts-ignore
     return ({ schema }) => {
         const type = getTypeFromSchema(schema);
         return [

@@ -69,6 +69,7 @@ function pluginsFactory({ keybindings = defaultKeys } = {}):
   | InputRule
   | Plugin
   | undefined {
+  // @ts-ignore
   return ({ schema }: { schema: Schema }) => {
     const type = getTypeFromSchema(schema);
 

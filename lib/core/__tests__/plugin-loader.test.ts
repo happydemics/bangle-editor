@@ -47,6 +47,7 @@ describe('nodeViews validation', () => {
     ];
 
     expect(() =>
+      // @ts-ignore
       pluginLoader(specRegistry, plugins),
     ).toThrowErrorMatchingInlineSnapshot(
       `"NodeView validation failed. Duplicate nodeViews for 'listItem' found."`,
@@ -66,6 +67,7 @@ describe('nodeViews validation', () => {
       }),
     ];
 
+    // @ts-ignore
     expect(() => pluginLoader(specRegistry, plugins)).not.toThrowError();
   });
 
@@ -130,6 +132,7 @@ describe('Flattens plugins correctly', () => {
     const group1 = new PluginGroup('grp1', [[groupChildPluginFn]]);
 
     expect(
+      // @ts-ignore
       pluginLoader(specRegistry, [group1, pluginFn])
         .map((r) => (r as any).key)
         .includes('myPlug$'),
@@ -155,6 +158,7 @@ describe('Flattens plugins correctly', () => {
     const metadata = { hello: 'world' };
 
     expect(
+      // @ts-ignore
       pluginLoader(specRegistry, [pluginFn], { metadata })
         .map((r) => (r as any).key)
         .includes('myPug$'),

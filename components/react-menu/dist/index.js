@@ -46,6 +46,7 @@ const defaultCalculateType = (state, _prevType) => {
 };
 function floatingMenu({ key = new PluginKey('floatingMenuPlugin'), keybindings = defaultKeys, tooltipRenderOpts = {}, calculateType = defaultCalculateType, } = {}) {
     return [
+        // @ts-ignore
         selectionTooltip.plugins({
             key,
             calculateType,
